@@ -8,7 +8,7 @@ let server = http.createServer( function(request, respon) {
     // text/html akan merender tag html menjadi tampilan di browser
     respon.writeHead(200, {'Content-type': 'text/html'})
     // hasil akhir yg akan diberikan ke user
-    respon.end('<h1>Halo Guys!, Aji disini mau review gadget</h1>')
+    respon.end('<h1>Halaman Beranda</h1>')
 })
 
 
