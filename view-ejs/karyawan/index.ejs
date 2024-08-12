@@ -1,0 +1,20 @@
+<h1>Data Seluruh Karyawan PT Konoha Makmur Sentosa</h1>
+<hr>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Nama</th>
+            <th>Gender</th>
+            <th>NIP</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for (let i = 0; i < karyawan.length; i++) { %>
+            <tr>
+                <td><%= karyawan[i].nama %></td>
+                <td><%= karyawan[i].gender %></td>
+                <td><%= karyawan[i].nip %></td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>

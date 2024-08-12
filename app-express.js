@@ -1,6 +1,14 @@
 const express   = require('express')
 const app       = express()
 const port      = 3000
+const mysql     = require('mysql2')
+const db        = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'jfd_belajar_database',
+})
+db.connect()
 
 
 app.set('view engine','ejs')    //setting penggunaan template engine untuk express
@@ -29,6 +37,32 @@ app.get('/profil', function(req,res) {
         gaji: 7000000,
     }
     res.render('profil-developer', data)
+})
+
+
+
+// buat function terpisah untuk
+// proses pengambilan data dari mysql
+function get_semuaKaryawan() {
+    return new Promise( (resolve,reject)=>{
+        db.query("SELECT * FROM karyawan", function(errorSql, hasil) {
+            if (errorSql) {
+                reject(errorSql)
+            } else {
+                resolve(hasil)
+            }
+        })
+    })
+}
+
+
+// gunakan async await, untuk memaksa node js
+// menunggu script yg dipanggil sampai selesai di ekseskusi
+app.get('/karyawan', async function(req,res) {
+    let dataview = {
+        karyawan: await get_semuaKaryawan()
+    }
+    res.render('karyawan/index', dataview)
 })
 
 
