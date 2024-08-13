@@ -2,24 +2,24 @@
 <hr>
 <form action="/karyawan/proses-insert" method="post">
     <label>Nama lengkap</label>
-    <input type="text" id="nama_lengkap" name="form_nama_lengkap">
+    <input type="text" id="nama_lengkap" name="form_nama_lengkap" required>
     <br><br>
 
     <label>Gender</label>
     <br>
-    <input type="radio" id="gender_l" name="form_gender" value="L">
+    <input type="radio" id="gender_l" name="form_gender" value="L" required>
     <label>Laki</label><br>
 
-    <input type="radio" id="gender_p" name="form_gender" value="P">
+    <input type="radio" id="gender_p" name="form_gender" value="P" required>
     <label>Perempuan</label><br>
     <br>
 
     <label>Alamat</label>
-    <textarea id="alamat" name="form_alamat"></textarea>
+    <textarea id="alamat" name="form_alamat" required></textarea>
     <br><br>
 
     <label>Nomor Induk Pegawai</label>
-    <input type="text" id="nip" name="form_nip">
+    <input type="text" id="nip" name="form_nip" required>
     <br><br>
 
     <button type="submit">Simpan</button>
