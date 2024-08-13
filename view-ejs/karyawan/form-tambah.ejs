@@ -1,0 +1,26 @@
+<h1>Input karyawan baru</h1>
+<hr>
+<form action="/karyawan/proses-insert" method="post">
+    <label>Nama lengkap</label>
+    <input type="text" id="nama_lengkap" name="form_nama_lengkap">
+    <br><br>
+
+    <label>Gender</label>
+    <br>
+    <input type="radio" id="gender_l" name="form_gender" value="L">
+    <label>Laki</label><br>
+
+    <input type="radio" id="gender_p" name="form_gender" value="P">
+    <label>Perempuan</label><br>
+    <br>
+
+    <label>Alamat</label>
+    <textarea id="alamat" name="form_alamat"></textarea>
+    <br><br>
+
+    <label>Nomor Induk Pegawai</label>
+    <input type="text" id="nip" name="form_nip">
+    <br><br>
+
+    <button type="submit">Simpan</button>
+</form>
