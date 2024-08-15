@@ -1,6 +1,6 @@
 <h1>Edit Karyawan</h1>
 <hr>
-<form action="/karyawan/proses-update" method="post">
+<form action="/karyawan/proses-update/<%= pegawai[0].id %>" method="post">
     <label>Nama lengkap</label>
     <input type="text" id="nama_lengkap" name="form_nama_lengkap" value="<%= pegawai[0].nama %>" required>
     <br><br>
