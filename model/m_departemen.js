@@ -1,16 +1,12 @@
-const db = require('../config/database').db
+const mysql     = require('mysql2')
+const db        = require('../config/database').db
+const eksekusi  = require('../config/database').eksekusi
 
 module.exports =
 {
     get_semuaDepartemen: function() {
-        return new Promise( (resolve,reject)=>{
-            db.query("SELECT * FROM departemen", function(errorSql, hasil) {
-                if (errorSql) {
-                    reject(errorSql)
-                } else {
-                    resolve(hasil)
-                }
-            })
-        })
+        return eksekusi( mysql.format(
+            "SELECT * FROM departemen"
+        ))
     }
 }
